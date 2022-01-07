@@ -1,0 +1,186 @@
+$color-primary: #7367f0;
+$color-black: #060606;
+$color-white: #ffffff;
+$color-gray: #6d6d6d;
+$color-white--soft: #f8f8f8;
+$font-primary: 'Montserrat', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+::selection{
+    color: $color-white;
+    background-color: $color-primary;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+	-webkit-text-fill-color: $color-gray;
+	transition: background-color 5000s;
+	-webkit-box-shadow: 0 0 0 #0000 inset;
+	box-shadow: 0 0 0 #0000 inset;
+	&::selection{
+		-webkit-text-fill-color: $color-white;
+	}
+}
+
+label{
+    margin-bottom: 0;
+}
+
+body{
+    font-family: $font-primary;
+    background-color: $color-white--soft;
+}
+
+.page-wrapper{
+    padding-top: 240px;
+    padding-bottom: 55px;
+    &[data-scroll="false"]{
+        @media screen and (max-width: 667px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: var(--page-wrapper-height);
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
+    &__bg{
+        top: 0;
+        left: 0;
+        height: 40vh;
+        min-height: 342px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.app-card{
+    padding: 65px 38px;
+    margin-bottom: 22px;
+    color: $color-black;
+    background-color: $color-white;
+    border-radius: 1em;
+    box-shadow: 0 0 10px rgba($color-black, $alpha: 0.05);
+    &--sm{
+        @media screen and (max-width: 667px) {
+            padding: 25px;
+            .app-card__form{
+                margin-top: 20px;
+                &__group:last-child{
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+    &__logo{
+        width: 115px;
+        height: 115px;
+        background-color: $color-black;
+        box-shadow: 0 0 10px rgba($color-black, $alpha: 0.2);
+        margin-top: -50%;
+    }
+    &__logo-text{
+        font-weight: 400;
+        margin-bottom: 35px;
+    }
+    &__title{
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 40px;
+        text-transform: capitalize;
+    }
+    &__text{
+        font-size: 14px;
+        font-weight: 400;
+    }
+    &__list__item{
+        &:not(:last-child){
+            margin-bottom: 20px;
+        }
+    }
+    &__input{
+        position: absolute;
+        appearance: none;
+        opacity: 0;
+        &:checked,
+        &:focus-visible{
+            + .app-card__btn{
+                color: $color-white;
+                background-color: $color-primary;
+                box-shadow: 0 8px 25px -8px $color-primary;
+            }
+        }
+    }
+    &__btn{
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        border: 1px solid $color-primary;
+        width: 100%;
+        color: $color-primary;
+        background-color: transparent;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 15px;
+        outline: none;
+        transition:
+            color .15s ease-in-out,
+            background-color .15s ease-in-out,
+            box-shadow .15s ease-in-out;
+        max-width: 305px;
+        @media screen and (max-width: 400px) {
+            max-width: 275px;
+        }
+        @media screen and (min-width: 768px) {
+            max-width: 275px;
+        }
+        &[type="submit"]{
+            background-color: $color-white--soft;
+        }
+        &:hover,
+        &:focus-visible{
+            color: $color-white;
+            background-color: $color-primary;
+            box-shadow: 0 8px 25px -8px $color-primary;
+            outline: none;
+        }
+    }
+    &__form{
+        margin-top: 55px;
+        &__group{
+            margin-bottom: 40px;
+        }
+        &__control{
+            color: $color-gray;
+            font-weight: 500;
+            border: 0;
+            border-bottom: 2px solid darken($color-white--soft, $amount: 7);
+            padding: 2px 5px;
+            height: 35px;
+            caret-color: $color-primary;
+            &:focus + .app-card__form__label,
+            &:not(:placeholder-shown) + .app-card__form__label{
+                font-size: 14px;
+                left: 0;
+                transform: translate(0, -140%);
+            }
+        }
+        &__label{
+            left: 10px;
+            color: $color-gray;
+            font-weight: 400;
+            transition: all 0.3s ease-in-out;
+            pointer-events: none;
+        }
+    }
+}

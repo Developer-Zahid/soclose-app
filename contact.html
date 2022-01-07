@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Details | SoClose App</title>
+    <link rel="stylesheet" href="./assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+</head>
+<body>
+    <main class="page-wrapper position-relative" data-scroll="false">
+        <div class="page-wrapper__bg position-fixed w-100" style="background-image: url(./assets/images/banner/banner.jpg);"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 col-md-8">
+                    <div class="app-card app-card--sm text-center">
+                        <h3 class="app-card__title mb-1 mb-md-2">coordonnées</h3>
+                        <p class="app-card__text mb-0">Un Lorem ipsum dolor sit amebt consectetur.</p>
+                        <form id="app-card__form" action="./finish.html" class="app-card__form">
+                            <div class="app-card__form__group d-flex align-items-center position-relative">
+                                <input id="email" name="email" type="email" class="app-card__form__control w-100" placeholder=" " required>
+                                <label for="email" class="app-card__form__label position-absolute">Email</label>
+                            </div>
+                            <div class="app-card__form__group d-flex align-items-center position-relative">
+                                <input id="name" name="name" type="text" class="app-card__form__control w-100" placeholder=" " required>
+                                <label for="name" class="app-card__form__label position-absolute">First Name</label>
+                            </div>
+                            <div class="app-card__form__group d-flex align-items-center position-relative">
+                                <input id="telephone" name="telephone" type="tel" class="app-card__form__control w-100" placeholder=" " required>
+                                <label for="telephone" class="app-card__form__label position-absolute">Telephone</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12 text-center mt-2 mt-md-4">
+                    <button form="app-card__form" type="submit" class="app-card__btn d-inline-block rounded-pill">Suivant</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
