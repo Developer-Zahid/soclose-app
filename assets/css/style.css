@@ -184,7 +184,8 @@ body {
 }
 
 .app-card__btn[type="submit"] {
-  background-color: #f8f8f8;
+  color: #ffffff;
+  background-color: #7367f0;
 }
 
 .app-card__btn:hover, .app-card__btn:focus-visible {

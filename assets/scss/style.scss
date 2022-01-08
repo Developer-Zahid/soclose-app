@@ -144,7 +144,8 @@ body{
             max-width: 275px;
         }
         &[type="submit"]{
-            background-color: $color-white--soft;
+            color: $color-white;
+            background-color: $color-primary;
         }
         &:hover,
         &:focus-visible{
